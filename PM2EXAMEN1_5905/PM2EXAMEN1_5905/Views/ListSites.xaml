@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:Convertidor="clr-namespace:PM2EXAMEN1_5905.Convertidor"
+             x:Class="PM2EXAMEN1_5905.Views.ListSites">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Convertidor:ByArrayToImage x:Key="byteToImage"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+            <StackLayout BackgroundColor="#042940">
+            <CollectionView x:Name="ListSite" SelectionMode="Single" SelectionChanged="ListSite_SelectionChanged">
+
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"/>
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal" BackgroundColor="#025939">
+
+                            <Image WidthRequest="50" Source="{Binding foto, Converter={StaticResource byteToImage}}"/>
+                            <Label VerticalOptions="Center" Text="{Binding descripcion}" TextColor="#DBF227"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Frame Padding="5" HasShadow="false" BackgroundColor="#042940">
+                <StackLayout Orientation="Horizontal" Spacing="50" Padding="20">
+                    <Button Text="Eliminar" x:Name="btnEliminar" Margin="30,0,10,0" Clicked="btnEliminar_Clicked" BackgroundColor="#025939" TextColor="#DBF227"/>
+                    <Button Text="Ver Mapa" x:Name="btnMapa" Margin="10,0,10,0" Clicked="btnMapa_Clicked" BackgroundColor="#025939" TextColor="#DBF227"/>
+                </StackLayout>
+
+            </Frame>
+        </StackLayout>
+             
+    </ContentPage.Content>
+</ContentPage>

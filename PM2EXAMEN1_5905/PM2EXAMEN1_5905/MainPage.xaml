@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2EXAMEN1_5905.MainPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="#042940">
+
+        <FlexLayout Direction="Row" AlignItems="Center" Padding="20" JustifyContent="SpaceEvenly">
+            <Image Source="uth"  WidthRequest="100"/>
+            <Label Text="SITE VISITOR APP" FontSize="16" Padding="10,5,30,10" TextColor="#DBF227"/>
+        </FlexLayout>
+
+        <FlexLayout Direction="Column" AlignItems="Center" JustifyContent="SpaceEvenly">
+            <ImageButton Source="usuario.png" x:Name="Foto" BackgroundColor="#042940" WidthRequest="150" HeightRequest="150" Clicked="Foto_Clicked"/>
+        </FlexLayout>
+
+        <Label Text="Latitud:" FontSize="16" Padding="10,5,30,10" TextColor="#DBF227"/>
+        <Entry Keyboard="Text" x:Name="txtLatitud" BackgroundColor="#042940" IsReadOnly="true" Text="{Binding latitud}" TextColor="#DBF227" FontSize="14"/>
+
+        <Label Text="Longitud:" FontSize="16" Padding="10,5,30,10" TextColor="#DBF227"/>
+        <Entry  Keyboard="Text" x:Name="txtLongitud" BackgroundColor="#042940" IsReadOnly="true" Text="{Binding longitud}" TextColor="#DBF227" FontSize="14"/>
+                
+        <Label Text="Descripción:" FontSize="16" Padding="10,5,30,10" TextColor="#DBF227"/>
+        <Editor Keyboard="Text" HeightRequest="100" x:Name="txtDescripcion" BackgroundColor="#042940" TextColor="#DBF227" FontSize="14"/>
+            
+        
+        <Frame HasShadow="false" BackgroundColor="#042940">
+            <StackLayout Orientation="Horizontal" Spacing="20" Padding="10">
+                <Button Text="Agregar Sitio" x:Name="btnGuardar" Margin="10,0,10,0"  Clicked="btnGuardar_Clicked" BackgroundColor="#025939" CornerRadius="10" TextColor="#DBF227"/>
+                <Button Text="Lista De Sitios" x:Name="btnLista" Margin="10,0,10,0" Clicked="btnLista_Clicked" BackgroundColor="#025939" CornerRadius="10" TextColor="#DBF227"/>
+            </StackLayout>
+        </Frame>
+
+        <Frame Padding="0" HasShadow="false" BackgroundColor="#042940">
+            
+            <StackLayout Orientation="Vertical" Spacing="0" Padding="0">
+                <Button Text="Salir" x:Name="btnExit" Margin="50,0,50,0" Clicked="btnExit_Clicked" BackgroundColor="#025939" CornerRadius="10" TextColor="#DBF227"/>
+                
+            </StackLayout>
+        </Frame>
+
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
